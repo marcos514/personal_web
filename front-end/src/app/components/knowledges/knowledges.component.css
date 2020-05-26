@@ -1,0 +1,13 @@
+
+.over_img{
+    position: relative;
+    top: 8px;
+    left: 16px;
+}
+
+.center {
+    margin: auto;
+    width: 70%;
+    top: 1px;
+    left: 1px;
+}

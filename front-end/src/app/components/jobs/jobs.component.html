@@ -1,0 +1,43 @@
+<div class="ui-fluid" id="jobs">
+    <div class="ui-g-12" style="text-align: center;">
+        <h1 style="color:white">Jobs</h1>
+    </div>
+    
+    <div *ngFor="let job of jobs; index as i; first as isFirst; even as even">
+        <div class="ui-g-12" style="color: rgb(34, 34, 34);">
+            <div *ngIf="even">
+                <div class="ui-g-6 ui-sm-0"></div>
+                <div
+                class="ui-g-6 ui-md-6 ui-sm-12 rigth_container"
+                style="text-align: center;">
+                    <h4>{{job.date_from}} {{job.date_to? '--'+ job.date_to: ' -- Working'}}</h4>
+                    <h2>{{job.company_name}}</h2>
+                    <h4>{{job.job_type}}</h4>
+                    <p>{{job.description}}</p>
+                </div>
+            </div>
+            <div *ngIf="!even">
+                <div
+                class="ui-g-6 ui-md-6 ui-sm-12 left_container"
+                style="text-align: center;">
+                    <h4>{{job.date_from}} {{job.date_to? '--'+ job.date_to: ' -- Working'}}</h4>
+                    <h2>{{job.company_name}}</h2>
+                    <h4>{{job.job_type}}</h4>
+                    <p>{{job.description}}</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+
+
+
+<!-- <div class="ui-fluid">
+
+<div class="ui-g-12">
+    <div class="ui-g-12 ui-md-4" style='color: white;'>ui-g-12 ui-md-4</div>
+    <div class="ui-g-12 ui-md-4 ui-md-offset-4" style='color: white;'>ui-g-12 i-md-4 ui-md-offset-4</div>
+</div>
+</div> -->
+
+

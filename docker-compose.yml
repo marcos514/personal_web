@@ -23,10 +23,3 @@ services:
       - '5432:5432/tcp'
     env_file:
       - db/.env
-  front-end:
-    build: ./front-end
-    container_name: 'front'
-    volumes:
-      - './front-end:/front-end'
-    ports:
-      - 8080:80

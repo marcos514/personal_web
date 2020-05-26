@@ -1,0 +1,50 @@
+.left_container{
+    position:relative;
+    background-color: #dbdbdb9d;
+}
+
+.rigth_container{
+    position:relative;
+    background-color: #dbdbdb9d;
+}
+
+.rigth_container:after {
+    content: "";
+    position:absolute;
+    margin: -20px;
+    width:40px;
+    height:40px;
+    transform:rotate(45deg);
+    border-radius: 50% 50% 50% 50%;
+    background-color:rgba(30, 255, 0, 0.616); 
+    top: 0px;
+    left: -5px;
+}
+
+
+.left_container:after {
+    content: "";
+    position:absolute;
+    margin: -20px;
+    width:40px;
+    height:40px;
+    transform:rotate(45deg);
+    border-radius: 50% 50% 50% 50%;
+    background-color:rgba(30, 255, 0, 0.616); 
+    top: 0px;
+    right: -5px;
+}
+
+
+/* .tag {
+    float: inline-start; 
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    width:95%;
+    margin: auto;
+
+} */

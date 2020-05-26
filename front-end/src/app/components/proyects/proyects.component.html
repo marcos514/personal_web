@@ -1,0 +1,50 @@
+<div class="ui-fluid" style="position: relative;" id="proyects">
+    <div class="ui-g-12" style="text-align: center;">
+        <h1 style="color:white">Proyects</h1>
+    </div>
+    <div *ngFor="let proyect of proyects; index as i; first as isFirst; even as even">
+        <div class="ui-g-2 ui-md-2 ui-sm-0">
+            
+        </div>
+
+        
+        <div class="ui-g-8 ui-md-8 ui-sm-12">
+            <p-table [value]="proyects">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>name</th>
+                        <th>date_finished</th>
+                        <th>date_started</th>
+                        <th>description</th>
+                        <!-- <th>knowledges</th> -->
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-proyect>
+                    <tr>
+                        <td>{{proyect.name}}</td>
+                        <td>{{proyect.date_finished}}</td>
+                        <td>{{proyect.date_started}}</td>
+                        <td>{{proyect.description}}</td>
+                        <!-- <td>{{proyect.knowledges}}</td> -->
+                    </tr>
+                </ng-template>
+            </p-table>
+            <!-- <h1>{{proyect.name}}</h1>
+            <h1>{{proyect.date_finished}}</h1>
+            <h1>{{proyect.date_started}}</h1>
+            <h1>{{proyect.description}}</h1>
+            <h1>{{proyect.img_url}}</h1>
+            <h1>{{proyect.porcentage of completion}}</h1>
+            <h1>{{proyect.status}}</h1>
+            <div *ngFor="let knowledge of proyect.knowledges; index as i;" >
+                <h1>{{i}}  {{knowledge.name}}</h1>
+            </div>
+             -->
+        </div>
+    </div>
+
+</div>
+
+
+
