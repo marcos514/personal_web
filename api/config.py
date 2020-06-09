@@ -24,7 +24,17 @@ db_url = 'postgresql://{user}:{password}@{host}/{dbname}'.format(
     # port=os.environ.get('DB_PORT','5432'),
     dbname=os.environ.get('POSTGRES_NAME', 'web-db')
 )
-engine = create_engine(db_url,echo=True)
+POOL_SIZE=os.environ.get('POOL_SIZE', 10)
+MAX_OVERFLOW=os.environ.get('MAX_OVERFLOW', 30)
+POOL_TIMEOUT=os.environ.get('POOL_TIMEOUT', 30)
+
+engine = create_engine(
+    db_url,
+    pool_size=POOL_SIZE,
+    max_overflow=MAX_OVERFLOW,
+    pool_timeout=POOL_TIMEOUT,
+    echo=True
+)
 session_factory = sessionmaker(bind=engine)
 Session = scoped_session(session_factory)
 

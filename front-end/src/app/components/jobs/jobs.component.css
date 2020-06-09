@@ -1,41 +1,110 @@
 .left_container{
+    text-align: right;
     position:relative;
-    background-color: #dbdbdb9d;
+    /* background-color: #dbdbdb9d; */
 }
 
 .rigth_container{
+    text-align: left;
     position:relative;
-    background-color: #dbdbdb9d;
+    /* background-color: #dbdbdb9d; */
 }
 
-.rigth_container:after {
-    content: "";
-    position:absolute;
-    margin: -20px;
-    width:40px;
-    height:40px;
-    transform:rotate(45deg);
-    border-radius: 50% 50% 50% 50%;
-    background-color:rgba(30, 255, 0, 0.616); 
-    top: 0px;
-    left: -5px;
+.spacing{
+    letter-spacing: 5px;
+    word-spacing: 10px;
+}
+
+.sofia_font{
+    /* background-color: rgba(105, 105, 105, 0.781); */
+    font-family: 'Sofia';
+}
+
+.asset_font{
+    font-family: 'Asset';
+}
+
+.audiowide_font{
+    font-family: 'Audiowide';
+}
+
+.B612_Mono{
+    font-family: 'B612 Mono';
+}
+
+.Aldrich_font{
+    font-family: 'Aldrich';
+    font-weight: bold;
+}
+
+.make_it_green{
+    color: rgb(0, 255, 0);
 }
 
 
-.left_container:after {
-    content: "";
-    position:absolute;
-    margin: -20px;
-    width:40px;
-    height:40px;
-    transform:rotate(45deg);
-    border-radius: 50% 50% 50% 50%;
-    background-color:rgba(30, 255, 0, 0.616); 
-    top: 0px;
-    right: -5px;
+
+@media only screen and (max-width: 630px) {
+    .header{
+        font-size: 25px;
+    }
+
+    .sub_header{
+        font-size: 15px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    .show_small{
+        display: block
+    }
+
+    .show_large{
+        display: none;
+    }
+
+    .date_font{
+        font-size: 12px;
+    }
 }
 
+@media only screen and (min-width: 630px) {
+    .rigth_container:after {
+        content: "";
+        position:absolute;
+        margin: -20px;
+        width:30px;
+        height:30px;
+        transform:rotate(45deg);
+        border-radius: 50% 50% 50% 50%;
+        background-color:rgba(30, 255, 0, 0.815); 
+        top: 50%;
+        left: -50px;
+    }
 
+
+    .left_container:after {
+        content: "";
+        position:absolute;
+        margin: -20px;
+        width:30px;
+        height:30px;
+        transform:rotate(45deg);
+        border-radius: 50% 50% 50% 50%;
+        background-color:rgba(30, 255, 0, 0.849); 
+        top: 50%;
+        right: -50px;
+    }
+
+    .show_small{
+        display: none;
+    }
+
+    .show_large{
+        display: block;
+    }
+}
 /* .tag {
     float: inline-start; 
     position: absolute;

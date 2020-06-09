@@ -1,32 +1,48 @@
-<div class="ui-fluid" id="jobs">
+<div class="ui-fluid" style="color:white" id="jobs">
     <div class="ui-g-12" style="text-align: center;">
-        <h1 style="color:white">Jobs</h1>
+        <h1 class="audiowide_font spacing">Jobs</h1>
     </div>
     
     <div *ngFor="let job of jobs; index as i; first as isFirst; even as even">
-        <div class="ui-g-12" style="color: rgb(34, 34, 34);">
+        <div class="ui-g-12 show_large">
             <div *ngIf="even">
-                <div class="ui-g-6 ui-sm-0"></div>
+                <div class="ui-g-7"></div>
                 <div
-                class="ui-g-6 ui-md-6 ui-sm-12 rigth_container"
-                style="text-align: center;">
-                    <h4>{{job.date_from}} {{job.date_to? '--'+ job.date_to: ' -- Working'}}</h4>
-                    <h2>{{job.company_name}}</h2>
-                    <h4>{{job.job_type}}</h4>
-                    <p>{{job.description}}</p>
+                class="ui-g-3 ui-md-5 rigth_container">
+                    <h4 class="audiowide_font make_it_green">{{job.date_from}} {{job.date_to? '-'+ job.date_to: '-Now'}}</h4>
+                    <h2 class='Aldrich_font'>{{job.company_name}}</h2>
+                    <h3 class='B612_Mono'>{{job.job_type}}</h3>
+                    <h3>{{job.description}}</h3>
                 </div>
             </div>
             <div *ngIf="!even">
+                <div class="ui-g-2 ui-md-1"></div>
                 <div
-                class="ui-g-6 ui-md-6 ui-sm-12 left_container"
-                style="text-align: center;">
-                    <h4>{{job.date_from}} {{job.date_to? '--'+ job.date_to: ' -- Working'}}</h4>
-                    <h2>{{job.company_name}}</h2>
-                    <h4>{{job.job_type}}</h4>
-                    <p>{{job.description}}</p>
+                class="ui-g-3 ui-md-4 left_container">
+                    <h4 class="audiowide_font make_it_green">{{job.date_from}} {{job.date_to? '-'+ job.date_to: '-Now'}}</h4>
+                    <h1 class='Aldrich_font'>{{job.company_name}}</h1>
+                    <h3 class='B612_Mono'>{{job.job_type}}</h3>
+                    <h3>{{job.description}}</h3>
                 </div>
             </div>
-        </div>    
+        </div>
+        <div class="ui-g-12 show_small">
+            <div class="ui-g-12">
+                <div style="text-align: left; position: absolute; width: 40%;">
+                    <h3 class='Aldrich_font'>{{job.company_name}}</h3>
+                </div>
+                <div style="text-align: right; position: absolute; right: 0px; width: 40%;">
+                    <h3 class="audiowide_font make_it_green date_font" style="vertical-align: middle;">
+                        {{job.date_from}} {{job.date_to? '- '+ job.date_to: '- Now'}}
+                    </h3>
+                </div>
+            </div>
+            <div class="ui-g-12"></div>
+            <div class="ui-g-12">
+                <h4 class='B612_Mono'>{{job.job_type}}</h4>
+                <h4>{{job.description}}</h4>
+            </div>
+        </div>
     </div>
 </div>
 

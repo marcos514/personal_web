@@ -1,9 +1,12 @@
 import { Knowledge } from './knowledge'
 
-export interface Proyect {
+export interface Project {
+    id:Number;
     name:String;
     date_finished:String;
     date_started:String;
     description:String;
-    knowledges:Array<Knowledge>
+    status:String;
+    percentage_done:Number;
+    knowledges:Array<Knowledge>;
 }

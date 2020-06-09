@@ -18,15 +18,20 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpService } from './services/http.service'
 import { JobsComponent } from './components/jobs/jobs.component';
 import { KnowledgesComponent } from './components/knowledges/knowledges.component';
-import { ProyectsComponent } from './components/proyects/proyects.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextModule} from 'primeng/inputtext';
+import {PanelModule} from 'primeng/panel';
 
 import {MenubarModule} from 'primeng/menubar';
 
 import {FieldsetModule} from 'primeng/fieldset';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -35,11 +40,13 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     HomeComponent,
     JobsComponent,
     KnowledgesComponent,
-    ProyectsComponent,
+    ProjectsComponent,
     ContactComponent,
     ProfileComponent,
     ResumeComponent,
     ToolbarComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,10 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     DeferModule,
     FieldsetModule,
     ProgressBarModule,
+    MultiSelectModule,
+    DropdownModule,
+    InputTextModule,
+    PanelModule,
     // ChartModule,
 
     

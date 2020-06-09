@@ -1,0 +1,31 @@
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    /* text-align: center; */
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.spacing{
+    letter-spacing: 2px;
+    word-spacing: 8px;
+}
+
+.sofia_font{
+    /* background-color: rgba(105, 105, 105, 0.781); */
+    font-family: 'Sofia';
+}
+
+.asset_font{
+    font-family: 'Asset';
+}
+
+.audiowide_font{
+    font-family: 'Audiowide';
+}
+
+.B612_Mono{
+    font-family: 'B612 Mono';
+    font-size: 18px;
+}

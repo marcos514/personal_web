@@ -32,15 +32,34 @@ button{
 
 .proyect_background{
   background-image: url('/assets/images/left_circuit.jpg'), url('/assets/images/black.png');
-
 }
 
-.profile_background{
-  background-attachment: scroll; 
-  background-image: url('/assets/images/f_profile4.jpg');
-  /* max-width: 100%;
-  max-height: 100%; */
+.contact_background{
+  background-image: url('/assets/images/central_circuit.jpg');
 }
+
+
+@media only screen and (max-width: 640px) {
+  .profile_background{
+    background-blend-mode: normal;
+    background-attachment: scroll;
+    background-color: rgba(255, 255, 255, 0.568);
+    background-image: url('/assets/images/perfil_bw.png');
+    background-size: 100% 100%;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  .profile_background{
+    background-blend-mode: normal;
+    background-attachment: scroll;
+    background-color: rgba(255, 255, 255, 0.568);
+    background-image: url('/assets/images/perfil_bw.png');
+    background-size: 50% 100%, 100% 100%;
+    background-position-x: left;
+  }
+}
+
 
 .container {
   position: relative;

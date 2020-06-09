@@ -1,0 +1,53 @@
+.asset_font{
+    font-family: Asset;
+    color:rgb(20, 20, 20);
+}
+
+.audiowide_font{
+    font-family: Audiowide;
+    color:rgb(20, 20, 20);
+}
+
+.make_it_green{
+    color: rgb(43, 255, 0);
+}
+
+.spacing{
+    letter-spacing: 5px;
+    word-spacing: 10px;
+}
+
+p{
+    background-color: rgba(105, 105, 105, 0.781);
+    text-align: center;
+    font-family: 'Sofia';
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 640px) {
+    .header{
+        font-size: 25px;
+    }
+
+    .sub_header{
+        font-size: 15px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+}
+  
+@media only screen and (min-width: 641px) {
+    .header{
+        font-size: 35px;
+    }
+
+    .sub_header{
+        font-size: 15px;
+    }
+
+    p{
+        font-size: 22px;
+    }
+}

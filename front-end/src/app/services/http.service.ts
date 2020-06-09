@@ -22,9 +22,9 @@ export class HttpService {
     return this.http.get("http://127.0.0.1:8000/knowledges");
   }
 
-  public GetProyects()
+  public GetProjects()
   {
-    return this.http.get("http://127.0.0.1:8000/proyects");
+    return this.http.get("http://127.0.0.1:8000/projects");
   }
 
   // public GetKnowledge()

@@ -1,0 +1,123 @@
+
+
+
+<div class="ui-fluid" id="projects">
+    <div class="ui-g-12" style="text-align: center;">
+        <h1 style="color:white;" class="audiowide_font spacing">Projects</h1>
+    </div>
+    <div class="ui-g-8 ui-lg-8 ui-md-12 ui-sm-12">
+        <!-- id:Number; -->
+        <!-- name:String; -->
+        <!-- date_finished:String; -->
+        <!-- date_started:String; -->
+        <!-- description:String; -->
+        <!-- status:String; -->
+        <!-- percentage_done:Number; -->
+        <!-- knowledges:Array<Knowledge>; -->
+            <!-- [showCurrentPageReport]="true" -->
+            <!-- [rows]="10" -->
+            <!-- [rowsPerPageOptions]="[10,25,50]" -->
+            <!-- [paginator]="true" -->
+            <!-- currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" -->
+            <!-- [filterDelay]="0" -->
+
+
+        <p-table
+            #dt
+            [value]="projects"
+            dataKey="id"
+            [rowHover]="true"
+            [responsive]="true"
+            [loading]="loading"
+            [globalFilterFields]="['name','date_started', 'date_finished','description','status', 'percentage_done']">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="date_started">Started<p-sortIcon field="date_started"></p-sortIcon></th>
+                    <th pSortableColumn="date_finished">Finished<p-sortIcon field="date_finished"></p-sortIcon></th>
+                    <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
+                    <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+                    <th pSortableColumn="percentage_done">Percentage Done <p-sortIcon field="percentage_done"></p-sortIcon></th>
+                </tr>
+                <tr>
+                    <th>
+                        <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')" placeholder="Name" class="ui-column-filter">
+                    </th>
+                    <th>
+                        <input pInputText type="text" (input)="dt.filter($event.target.value, 'date_started', 'contains')" placeholder="Date Started" class="ui-column-filter">
+                    </th>
+                    <th>
+                        <input pInputText type="text" (input)="dt.filter($event.target.value, 'date_finished', 'contains')" placeholder="Date Ended" class="ui-column-filter">
+                    </th>
+                    <th>
+                    </th>
+                    <th style="font-size: 15px;">
+                        <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')" styleClass="ui-column-filter">
+                            <ng-template let-option pTemplate="item">
+                                <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+                            </ng-template>
+                        </p-dropdown>
+                    </th>
+                    <th>
+                        <input pInputText type="text" (input)="dt.filter($event.target.value, 'percentage_done', 'contains')" placeholder="Percentage" class="ui-column-filter">
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-project let-i="rowIndex">
+                <tr [ngStyle]="{'background-color':getColor(i)}">
+                    <td>
+                        <span class="ui-column-title">Name</span>
+                        {{project.name}}
+                    </td>
+                    <td colspan="2">
+                        <span class="ui-column-title">Date</span>
+                        <span style="vertical-align: middle; margin-left: .5em">{{project.date_started}} -- {{project.date_finished? project.date_finished:'In Progress'}}</span>
+                    </td>
+                    <td>
+                        <div class="large_view">
+                            <button type="button" pButton (click)="selectProject(project)" icon="pi pi-window-maximize" *ngIf="selected_project == project"></button>
+                            <button type="button" pButton (click)="selectProject(project)" icon="pi pi-window-minimize" *ngIf="selected_project != project"></button>
+                        </div>
+
+                        <div class="small_view">
+                            <div class="ui-g-0 ui-sm-12" style="width: 100%;">
+                                <div class="ui-g-1 ui-sm-5" style="text-align: left; left: -15px; position: relative;">
+                                    <span class="ui-column-title">Description</span>
+                                </div>
+                                <div class="ui-g-11 ui-sm-7">
+                                    <button type="button" pButton (click)="selectProject(project)" icon="pi pi-window-maximize" *ngIf="selected_project == project"></button>
+                                    <button type="button" pButton (click)="selectProject(project)" icon="pi pi-window-minimize" *ngIf="selected_project != project"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="ui-column-title">Status </span>
+                        <span [class]="'customer-badge status-' + project.status">{{project.status}}</span>
+                    </td>
+                    <td>
+                        <span class="ui-column-title">Activity</span>
+                        <p-progressBar [value]="project.percentage_done" [showValue]="false"></p-progressBar>
+                        <br>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="8" style="text-align:left">No projects found.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+
+    <div id="project_description" class="ui-g-4 ui-lg-4 ui-md-12 ui-sm-12">
+        <p-panel [style]="{'margin-bottom':'20px'}" *ngIf="selected_project != null">
+            <p-header>
+                {{selected_project.name}} Description
+            </p-header>
+            {{selected_project.description}}
+        </p-panel>
+    </div>
+
+</div>

@@ -1,13 +1,13 @@
-<div class="ui-fluid" id='knowledges'>
+<div class="ui-fluid" id='knowledges' style="color:white">
     <div class="ui-g-12" style="text-align: center;">
-        <h1 style="color:white">Knowledges</h1>
+        <h1 class="audiowide_font spacing">Knowledges</h1>
     </div>
 
     <div class="over_img ui-g-12 ui-md-12 ui-sm-12">
         <div *ngFor="let knowledge of knowledges; index as i; first as isFirst">
             <!-- {{i}}/{{knowledges.length}}. {{knowledge}} <span *ngIf="isFirst">default</span> -->
             <div class="ui-g-1 ui-md-2 ui-sm-12">
-                <h4 style="color: white; margin: auto; width: 70%;">{{knowledge.name}}</h4>
+                <h4 style="margin: auto;" class="B612_Mono">{{knowledge.name}}</h4>
             </div>
             <div class="ui-g-10 ui-md-9 ui-sm-11" (click)="knowledge.display_child = !knowledge.display_child">
                 <p-progressBar 
@@ -15,13 +15,13 @@
                     [showValue]="true"
                     [style]="{'background-color': '#191919', 'color': 'white'}">
                 </p-progressBar>
-                <div class="ui-g-12 ui-md-12 ui-sm-12" *ngIf="knowledge.display_child;" style="color: rgb(29, 29, 29);">
+                <div class="ui-g-12 ui-md-12 ui-sm-12" *ngIf="knowledge.display_child && knowledge.child_knowledges.length > 0" style="color: rgb(29, 29, 29);">
                     <div *ngFor="let child_knowledge of knowledge.child_knowledges;">
                         <!-- {{i}}/{{knowledges.length}}. {{knowledge}} <span *ngIf="isFirst">default</span> -->
-                        <div class="ui-g-1 ui-md-2 ui-sm-12">
-                            <h4 style="color: white; margin: auto; width: 70%;">{{child_knowledge.name}}</h4>
+                        <div class="ui-g-1 ui-md-2 ui-sm-3">
+                            <h4 style="color: white; margin: auto;">{{child_knowledge.name}}</h4>
                         </div>
-                        <div class="ui-g-10 ui-md-10 ui-sm-12">
+                        <div class="ui-g-10 ui-md-10 ui-sm-9">
                             <p-progressBar 
                                 [value]="child_knowledge.level"
                                 [showValue]="true"
@@ -32,8 +32,8 @@
                 </div>
             </div>
             <div
+                *ngIf="knowledge.child_knowledges.length > 0"
                 class="ui-g-1 ui-md-1 ui-sm-1"
-                style="color: white;"
                 (click)="knowledge.display_child = !knowledge.display_child">
                 <i class="pi pi-angle-down" *ngIf="knowledge.display_child"></i>
                 <i class="pi pi-angle-up" *ngIf="!knowledge.display_child"></i>

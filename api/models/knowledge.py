@@ -24,7 +24,8 @@ class Knowledge(Base):
     @staticmethod
     def get_all():
         session = Session()
-        return session.query(Knowledge).filter(Knowledge.parent_knowledge == None).all()
+        
+        return session.query(Knowledge).filter_by(parent_knowledge=None).order_by(Knowledge.level.desc()).all()
 
     def save(self):
         session = Session()

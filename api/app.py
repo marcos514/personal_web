@@ -3,7 +3,7 @@ import config
 from flask import Flask
 from flask_cors import CORS, cross_origin
 
-from blueprints import jobs, knowledges, proyects
+from blueprints import jobs, knowledges, projects
 
 app = Flask(__name__)
 CORS(app, resources=r'/*', allow_headers='Content-Type')
@@ -11,7 +11,7 @@ CORS(app, resources=r'/*', allow_headers='Content-Type')
 
 
 app.register_blueprint(jobs.jobs)
-app.register_blueprint(proyects.proyects)
+app.register_blueprint(projects.projects)
 app.register_blueprint(knowledges.knowledges)
 
 
